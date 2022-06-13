@@ -42,8 +42,20 @@ body {
 #triangle {
   width: 0;
   height: 0;
-  border-left: 90px solid transparent;
-  border-right: 90px solid transparent;
+  top: 10px;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
 
-  border-top: 90px solid #2e0348;
+  border-top: 120px solid #2e0348;
+  position: relative;
+}
+
+#message {
+  text-align: center;
+  top: -90px;
+  left: -47px;
+  position: relative;
+  width: 93px;
+  height: 93px;
+  margin: 0px;
 }
