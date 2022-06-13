@@ -1,0 +1,16 @@
+Vue 
+
+v-if="variable"
+    - display an element if variable is true
+v-else
+    - display an element if variable is not true
+v-show="variable"
+    - display an element if vairable is true
+    - v-else doesn't work
+v-on:click="foo()"
+    - when you click, 'foo' happens
+    = :click, :mousedown, :mouseover, :keydown
+v-for="item in items"
+    -creates an instance of all inner html 
+        for each item within the items array
+v-bind:style="{color: '#fff'}"

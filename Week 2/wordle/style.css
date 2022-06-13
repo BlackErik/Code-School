@@ -1,0 +1,154 @@
+* {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#button-flexbox-container {
+  display: flex;
+  justify-content: center;
+}
+
+#button-container {
+  display: flex;
+  width: 500px;
+  justify-content: space-between;
+}
+
+#stats-button {
+  justify-self: center;
+  cursor: pointer;
+  color: #6aaa64;
+  font-size: 20px;
+}
+
+#stats-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 42%;
+  right: 50%;
+  width: 250px;
+  height: 250px;
+  background-color: white;
+  border: 1px solid #aaa;
+}
+
+#new-word-button {
+  cursor: pointer;
+  color: #c9b458;
+  font-size: 20px;
+}
+
+#current-guess {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+.guess {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.letter {
+  flex: 1;
+  height: 60px;
+  border: 1px solid #aaa;
+  margin: 2px;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+  color: #515151;
+  text-transform: capitalize;
+}
+
+.keyboardRow {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.keyboardLetter {
+  flex: 1;
+  height: 50px;
+  border: 1px solid #aaa;
+  margin: 2px;
+  font-size: 32px;
+  line-height: 50px;
+  text-align: center;
+  color: #515151;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.match {
+  background-color: #6aaa64;
+  color: white;
+}
+
+.contains {
+  background-color: #c9b458;
+  color: white;
+}
+
+.wrong {
+  background-color: #787c7e;
+  color: white;
+}
+
+#message {
+  text-align: center;
+  font-size: 20px;
+}
+
+.not-active {
+  display: hidden;
+}
+
+#games-won-text {
+  color: #6aaa64;
+}
+
+#games-played-text {
+  color: #c9b458;
+}
+
+#games-lost-text {
+  color: #787c7e;
+}
+
+#close-stats-container {
+  cursor: pointer;
+  position: absolute;
+  top: 0%;
+  left: 85%;
+  color: #787c7e;
+}
+
+@media screen and (max-width: 500px) {
+  .stats-container {
+    left: 30%;
+  }
+
+  .keyboardLetter {
+    height: 40px;
+    font-size: 20px;
+  }
+  .keyboardRow {
+    max-width: 400px;
+  }
+  #close-stats-container {
+    left: 15%;
+  }
+}

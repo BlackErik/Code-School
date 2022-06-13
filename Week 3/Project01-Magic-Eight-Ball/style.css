@@ -1,0 +1,49 @@
+[v-cloak] {
+  display: none;
+}
+
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+body {
+  background-color: #efefef;
+}
+
+#eight-ball {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  border-radius: 100%;
+  background-color: #180226;
+  text-align: center;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#message-area {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: 1px solid white;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#triangle {
+  width: 0;
+  height: 0;
+  border-left: 90px solid transparent;
+  border-right: 90px solid transparent;
+
+  border-top: 90px solid #2e0348;
+}

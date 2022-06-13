@@ -1,0 +1,51 @@
+body {
+  font-family: sans-serif;
+  background-color: #fafafa;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.tile {
+  flex: 0 0 32%;
+  height: 150px;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  margin: 2px;
+  font-size: 150px;
+
+  text-align: center;
+  font-weight: bold;
+}
+
+button {
+  margin: 10px auto;
+  cursor: pointer;
+}
+
+.x-occupied {
+  color: #fb8a8a;
+}
+
+.o-occupied {
+  color: #9f9ffe;
+}
+
+.draw-text {
+  color: #aaa;
+  font-size: 32px;
+}
+
+.win-color {
+  color: #acfd91;
+  font-size: 32px;
+}

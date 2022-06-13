@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Wordle</h1>
+    <div id="button-flexbox-container">
+      <div id="button-container">
+        <p id="new-word-button">New Word</p>
+        <p id="stats-button">Stats</p>
+      </div>
+    </div>
+    <div id="stats-container">
+      <p id="games-played-text">
+        Games Played: <span id="games-played-number">0</span>
+      </p>
+      <p id="games-won-text">Games Won: <span id="games-won-number">0</span></p>
+
+      <p id="games-lost-text">
+        Games Lost: <span id="games-lost-number">0</span>
+      </p>
+      <h2 id="close-stats-container">X</h2>
+    </div>
+    <div id="guesses"></div>
+    <p id="message"></p>
+    <div id="keyboard"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Math Quiz</h1>
+      <div id="radio-buttons">
+        <input
+          type="radio"
+          id="multiplication"
+          name="math"
+          value="Multiplication"
+        />
+        <label for="multiplication">Multiplication</label>
+        <input type="radio" id="addition" name="math" value="Addition" />
+        <label for="addition">Addition</label>
+        <button id="choose-math">Choose Math</button>
+      </div>
+      <h2>
+        <span id="first-number">X</span> <span id="math-symbol"> + </span>
+        <span id="second-number">Y</span>
+      </h2>
+      <input type="number" id="answer-input" />
+      <button id="submit-button">Answer</button>
+
+      <h3 id="response-text"></h3>
+      <h4>
+        Correct Multiplication Problems: <span id="correct-multiply">0</span>
+      </h4>
+      <h4>Correct Addition Problems: <span id="correct-addition">0</span></h4>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
