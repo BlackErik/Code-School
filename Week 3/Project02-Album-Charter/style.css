@@ -1,0 +1,74 @@
+[v-cloak] {
+  display: none;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+#app {
+  display: grid;
+  grid-template-columns: 3fr 0.25fr 7fr;
+  height: 100vh;
+  padding: 0.5rem;
+}
+
+#left-column {
+  grid-row: 1/1;
+  grid-column: 1/2;
+  text-align: center;
+}
+h1 {
+  padding: 1rem;
+}
+
+#search-album-area {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#search-album-area img {
+  width: 33.333%;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  overflow-y: scroll;
+}
+
+#middle-column {
+  grid-row: 1/1;
+  grid-column: 2/3;
+}
+
+#right-column {
+  grid-row: 1/1;
+  grid-column: 3/4;
+}
+
+#picked-album-area {
+  height: 70%;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.picked-album-slot {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+#picked-album-area .top-10 {
+  width: 20%;
+  aspect-ratio: 1/1;
+}
+
+#picked-album-area .top-22 {
+  width: calc(100% / 6);
+  aspect-ratio: 1/1;
+}
+
+#picked-album-area .top-42 {
+  width: calc(100% / 10);
+  aspect-ratio: 1/1;
+}
