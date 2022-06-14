@@ -11,15 +11,16 @@
 }
 
 body {
-  background-color: #efefef;
+  background-color: #f0f0f0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #eight-ball {
-  width: 500px;
-  height: 500px;
+  width: 400px;
+  height: 400px;
   margin: auto;
   border-radius: 100%;
-  background-color: #180226;
+  background-color: #140222;
   text-align: center;
   color: black;
   display: flex;
@@ -38,7 +39,7 @@ body {
   align-items: center;
   color: white;
 }
-
+/* 
 #triangle {
   width: 0;
   height: 0;
@@ -46,16 +47,27 @@ body {
   border-left: 80px solid transparent;
   border-right: 80px solid transparent;
 
-  border-top: 120px solid #2e0348;
+  border-top: 130px solid #030e60;
   position: relative;
-}
+} */
 
 #message {
   text-align: center;
-  top: -90px;
-  left: -47px;
+  top: 10%;
+  /* left: -47px; */
   position: relative;
   width: 93px;
   height: 93px;
   margin: 0px;
+  font-weight: bold;
+  transition: 1s;
+}
+
+#input-section {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 5px;
 }

@@ -11,21 +11,25 @@
     <div id="app" v-cloak>
       <div id="eight-ball">
         <div id="message-area">
-          <div id="triangle"><div id="message">{{message}}</div></div>
+          <div id="message" v-bind:style="{color: messageColor}">
+            {{message}}
+          </div>
         </div>
       </div>
 
       <br />
       <br />
-      {{ prompt }}
-      <input
-        type="text"
-        v-model="question"
-        v-on:keydown.enter="askQuestion()"
-      />
-      <button v-show="isValidQuestion()" v-on:click="askQuestion()">
-        Ask Question
-      </button>
+      <div id="input-section" v-show="answerReady">
+        {{ prompt }}
+        <input
+          type="text"
+          v-model="question"
+          v-on:keydown.enter="askQuestion()"
+        />
+        <button v-show="isValidQuestion()" v-on:click="askQuestion()">
+          Ask Question
+        </button>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="app.js"></script>
