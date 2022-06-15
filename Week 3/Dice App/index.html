@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <title>Dice Roll App</title>
+</head>
+<body>
+  <div id="app">
+    <!-- number input, button to add die -->
+    <input v-model="sidesOfDie" @keydown.enter="addDie()" />
+    <button @click="addDie()">Add Die</button>
+
+    <div id="die-area">
+      <!-- divs for each die (CLASS: die) -->
+      <!--    - when clicked, roll die -->
+      <!--    - when ctrl+clicked, delete die (hint: click.ctrl) -->
+      <div
+        class="die"
+        v-for="(die,index) in allDice"
+        @click="rollDie(index)"
+        @click.ctrl="deleteDie(index)"
+      >
+        <!-- display sides - (no css class) -->
+        <p>{{allDice[index].sides}}</p>
+
+        <!-- display the current value (CLASS: current-value) -->
+        <h1 class="current-value">{{allDice[index].value}}</h1>
+      </div>
+    </div>
+    <!-- button to roll all dice -->
+    <button @click="rollAllDice()">Roll All Dice</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="app.js"></script>
+</body>
