@@ -18,6 +18,13 @@
         />
         <button v-on:click="searchArtist()">Search Artist</button>
         <div id="search-album-area">
+          <p v-show="!searched" style="margin-top: 20px">
+            Search an artist and add an album to the chart
+            <br /><br />
+            Ctrl + click to delete
+            <br /><br />
+            Drag and drop to move
+          </p>
           <img
             v-for="(album,index) in searchAlbumList"
             v-bind:src="album.strAlbumThumb"
@@ -25,15 +32,30 @@
           />
         </div>
       </div>
-      <div id="middle-column"></div>
       <div id="right-column">
         <div id="picked-album-area">
           <div
             class="picked-album-slot"
             v-for="(i, index) in 42"
             v-bind:class="{'top-10' : index < 10, 'top-22' : index >= 10 && index < 22, 'top-42': index >= 22 && index < 42}"
-          ></div>
+            @mouseup="dropAlbum(index)"
+            @mouseover="hoverAlbum(index)"
+          >
+            <img
+              draggable="false"
+              class="picked-album"
+              v-if="index < pickedAlbumList.length"
+              :src="pickedAlbumList[index].strAlbumThumb"
+              @click.ctrl="removeAlbum(index)"
+              @mousedown="pickupAlbum(index)"
+            />
+          </div>
         </div>
+        <ol>
+          <li v-for="album in pickedAlbumList">
+            {{ album.strArtist }} - {{ album.strAlbum}}
+          </li>
+        </ol>
       </div>
     </div>
 
