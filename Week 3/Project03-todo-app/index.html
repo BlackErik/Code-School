@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Todo App</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Todo App</h1>
+      <div id="input-area">
+        Name: <input placeholder="Name" v-model="nameInput" /> <br />
+        Description:
+        <input placeholder="Description" v-model="descriptionInput" /> <br />
+        Done: <input type="checkbox" v-model="doneInput" /> <br />
+        Date: <input type="date" v-model="dateInput" /> <br />
+        <br />
+        Tags:
+        <br />
+        <div v-for="tag in usableTags" class="tag-area">
+          {{tag}}: <input type="checkbox" v-model="tagsInput[tag]" />
+        </div>
+        <button @click="addTodo()">Add TODO</button>
+      </div>
+      <div id="list-area">
+        <div
+          v-for="(todo,index) in todos"
+          class="todo"
+          v-bind:class="{strikethrough : todo.done }"
+          v-bind:class="{ 'newTodo' : todo._id == newTodoId}"
+        >
+          <p v-if="editingIndex != index" class="todo-name">{{todo.name}}</p>
+          <input
+            class="todo-name"
+            placeholder="Name"
+            v-model="todo.name"
+            v-else
+          />
+
+          <p v-if="editingIndex != index" class="todo-desc">
+            {{todo.description}}
+          </p>
+          <input
+            class="todo-desc"
+            v-else
+            v-model="todo.description"
+            style="margin-top: 20px"
+          />
+
+          <p v-if="editingIndex != index" class="todo-deadline">
+            {{todo.deadline}}
+          </p>
+          <input
+            type="date"
+            class="todo-deadline"
+            v-else
+            v-model="todo.deadline"
+            style="margin-top: 20px"
+          />
+          <br v-if="editingIndex == index" />
+
+          <p v-if="editingIndex != index">{{todo.done}}</p>
+          <input
+            type="checkbox"
+            v-else
+            v-model="todo.done"
+            style="margin-top: 20px"
+          />
+          <br v-if="editingIndex == index" />
+
+          <p v-if="editingIndex != index" class="todo-tags">{{todo.tags}}</p>
+          <br v-if="editingIndex == index" />
+          <div
+            v-if="editingIndex == index"
+            v-for="tag in usableTags"
+            style="display: inline"
+          >
+            {{tag}}:
+            <input
+              v-if="editingIndex == index"
+              type="checkbox"
+              v-model="todo.tag"
+              style="margin-right: 20px"
+            />
+          </div>
+
+          <button
+            v-if="editingIndex != index"
+            @click="editingTodo(index)"
+            class="edit-button green-button"
+          >
+            Edit Todo
+          </button>
+          <button
+            v-if="editingIndex == index"
+            @click="editingTodo(-1)"
+            class="edit-button red-button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
