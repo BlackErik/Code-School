@@ -18,7 +18,7 @@
         Description:
         <input placeholder="Description" v-model="descriptionInput" /> <br />
         Done: <input type="checkbox" v-model="doneInput" /> <br />
-        Date: <input type="date" v-model="dateInput" /> <br />
+        Deadline: <input type="date" v-model="dateInput" /> <br />
         <br />
         Tags:
         <br />
@@ -32,7 +32,8 @@
           v-for="(todo,index) in todos"
           class="todo"
           v-bind:class="{strikethrough : todo.done }"
-          v-bind:class="{ 'newTodo' : todo._id == newTodoId}"
+          v-bind:class="{ newTodo :
+        todo._id == newTodoId}"
         >
           <p v-if="editingIndex != index" class="todo-name">{{todo.name}}</p>
           <input
@@ -64,7 +65,7 @@
           />
           <br v-if="editingIndex == index" />
 
-          <p v-if="editingIndex != index">{{todo.done}}</p>
+          <p v-if="editingIndex != index">Done: {{todo.done}}</p>
           <input
             type="checkbox"
             v-else
@@ -74,28 +75,45 @@
           <br v-if="editingIndex == index" />
 
           <p v-if="editingIndex != index" class="todo-tags">{{todo.tags}}</p>
+
           <br v-if="editingIndex == index" />
-          <div
-            v-if="editingIndex == index"
-            v-for="tag in usableTags"
-            style="display: inline"
-          >
-            {{tag}}:
-            <input
-              v-if="editingIndex == index"
-              type="checkbox"
-              v-model="todo.tag"
-              style="margin-right: 20px"
-            />
+
+          <div v-if="editingIndex == index">
+            <div v-for="tag in usableTags">
+              {{tag}}:
+              <input
+                v-if="editingIndex == index"
+                type="checkbox"
+                v-model="editingTags[tag]"
+                style="margin-right: 20px"
+              />
+            </div>
           </div>
 
           <button
             v-if="editingIndex != index"
-            @click="editingTodo(index)"
+            @click="editTodo(todo,index)"
             class="edit-button green-button"
           >
             Edit Todo
           </button>
+
+          <button
+            v-if="editingIndex != index"
+            @click="deleteTodo(todo)"
+            class="edit-button red-button"
+          >
+            Delete
+          </button>
+
+          <button
+            v-if="editingIndex == index"
+            @click="putTodo(todo)"
+            class="edit-button green-button"
+          >
+            Submit
+          </button>
+
           <button
             v-if="editingIndex == index"
             @click="editingTodo(-1)"
