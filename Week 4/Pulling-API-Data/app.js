@@ -22,6 +22,9 @@ var app = new Vue({
 
 /* 
 
+
+
+
 === Instructions ===
 
 1. Get the Vue <script> tag hooked up 
