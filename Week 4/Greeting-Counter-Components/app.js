@@ -20,7 +20,6 @@
 */
 
 Vue.component("greeting", {
-  props: ["name"],
   template: `
     <div>
         Hello, Vue Components, I am {{ name }} !
@@ -28,7 +27,9 @@ Vue.component("greeting", {
     </div>
   `,
   data: function () {
-    return {};
+    return {
+      name: "greeting_component",
+    };
   },
   methods: {
     changeName: function () {
@@ -54,7 +55,6 @@ Vue.component("greeting", {
 */
 
 Vue.component("counter", {
-  props: ["count"],
   template: `
     <div>
         {{count}}
@@ -62,7 +62,9 @@ Vue.component("counter", {
     </div>
     `,
   data: function () {
-    return {};
+    return {
+      count: 0,
+    };
   },
   methods: {
     increaseCounter: function () {
@@ -82,8 +84,5 @@ it, is only here to hold the components we implement.
 
 var app = new Vue({
   el: "#app",
-  data: {
-    name: "component_greeting",
-    count: 0,
-  },
+  data: {},
 });
