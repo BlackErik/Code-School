@@ -1,0 +1,23 @@
+img {
+  width: 200px;
+  aspect-ratio: 1/1;
+}
+
+#app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+p {
+  max-width: 200px;
+}
+
+.item-container {
+  margin: 50px;
+}
+
+.description {
+  overflow-y: scroll;
+  max-height: 200px;
+}

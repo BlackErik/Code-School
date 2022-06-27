@@ -22,6 +22,10 @@
         Finish Maze!
       </button>
       <!-- wall divs (CLASS: wall)-->
+      <!--    - display at appropriate times -->
+      <!--    - bind the style to the style objects given from the API -->
+      <!--    - player lose when their mouse touches the wall -->
+
       <div
         class="wall"
         v-for="(wall,index) in walls[0]"
@@ -29,18 +33,11 @@
         v-show=" started == true && lost == false && won == false"
         @mouseover="lost = true"
       ></div>
-      <!--    - display at appropriate times -->
-      <!--    - bind the style to the style objects given from the API -->
-      <!--    - player lose when their mouse touches the wall -->
 
       <!-- win message, lose message, and button for restarting the maze (IDs: win-message, lose-message, restart-button)-->
       <h1 id="win-message" v-show="won == true">YOU WIN</h1>
       <h1 id="lose-message" v-show="lost == true">YOU LOSE</h1>
-      <button
-        id="restart-button"
-        @click="restartMaze()"
-        v-show="lost == true || won == true"
-      >
+      <button id="restart-button" @click="restartMaze()" v-show="lost || won ">
         Restart Maze
       </button>
     </div>
