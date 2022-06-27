@@ -7,16 +7,19 @@ var app = new Vue({
   },
 
   methods: {
-    getApiData: function () {
-      fetch(API_URL + "/products").then((response) => {
-        response.json().then((data) => {
-          this.apiData = data;
-        });
-      });
-    },
+    // getApiData: function () {
+    //   fetch(API_URL + "/products").then((response) => {
+    //     response.json().then((data) => {
+    //       this.apiData = data;
+    //     });
+    //   });
+    // },
   },
-  created: function () {
-    this.getApiData();
+  created: async function () {
+    // this.getApiData();
+    let response = await fetch(API_URL + "/products");
+    let data = await response.json();
+    this.apiData = data;
   },
 });
 
