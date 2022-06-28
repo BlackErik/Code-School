@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fortune Sorter</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>New Fortune</h2>
+      <!-- <new-fortune></new-fortune> -->
+      <new-fortune
+        v-bind:new-fortune="newFortune"
+        v-bind:sort-fortune="sortFortune"
+      ></new-fortune>
+
+      <h2>Good Fortunes</h2>
+      <!-- <sorted-fortune v-for=""></sorted-fortune> -->
+      <sorted-fortune
+        v-for="(fortune, index) in goodFortuneList"
+        v-bind:fortune="fortune"
+        v-bind:key="`good-${index}`"
+        v-bind:color="'green'"
+      ></sorted-fortune>
+
+      <h2>Bad Fortunes</h2>
+      <sorted-fortune
+        v-for="(fortune,index) in badFortuneList"
+        v-bind:fortune="fortune"
+        v-bind:key="`bad-${index}`"
+        v-bind:color="'red'"
+      ></sorted-fortune>
+      <!-- <sorted-fortune v-for=""></sorted-fortune> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- 
+
+1. Create a component that will display the new fortune (yet to be sorted)
+
+2. Get the API hooked up and confirm the new fortune component is displaying correctly
+
+3. Implement the buttons to sort the new fortune and grab another new one from the api
+    (we won't see them yet, just use the Console to see if it's working)
+
+4. Create a component that will display an individual fortune after it is sorted
+
+ -->
