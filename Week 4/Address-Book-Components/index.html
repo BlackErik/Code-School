@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Address Book - Components</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>Address Book with Components</h1>
+      <input type="text" v-model="nameInput" placeholder="Name" />
+      <input type="text" v-model="addressInput" placeholder="Address" />
+      <button @click="addAddress()">Add Address</button>
+
+      <div v-for="(address,index) in addresslist">
+        <customaddress
+          v-bind:index="index"
+          v-bind:addresslist="addresslist"
+          v-bind:address="address"
+        ></customaddress>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+<!-- 
+    
+1. Create inputs for name and address
+2. Create Button to record new addresses
+3. Display list of addresses *but now use a Component!*
+4. Add a remove button that will remove the address from the array
+
+-->
