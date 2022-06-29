@@ -35,7 +35,7 @@ Vue.component("mad-lib", {
     name: String,
     birthday: String,
     favoriteFood: String,
-    favoriteNumber: Number,
+    favoriteNumber: String,
     favoriteMovie: String,
     favoriteShoppingItem: String,
   },
@@ -50,5 +50,6 @@ var app = new Vue({
     favoriteNumberInput: 0,
     favoriteMovieInput: "",
     favoriteThingInput: "",
+    page: "start",
   },
 });

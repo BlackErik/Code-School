@@ -12,35 +12,46 @@
   <body>
     <div id="app" style="font-family: 'Coming soon', cursive">
       <h1>Component Mad Libs</h1>
-      <pessimistic-mad-lib
-        v-bind:name="'Derek'"
-        v-bind:birthday="'August 9th'"
-        v-bind:favorite-food="'Panda Express'"
-        v-bind:favorite-number="12"
-        v-bind:favorite-movie="'Kangaroo Jack'"
-        v-bind:favorite-shopping-item="'guitars'"
-      >
-      </pessimistic-mad-lib>
+      <div v-if="page == 'start'">
+        <!-- <pessimistic-mad-lib
+          v-bind:name="'Derek'"
+          v-bind:birthday="'August 9th'"
+          v-bind:favorite-food="'Panda Express'"
+          v-bind:favorite-number="12"
+          v-bind:favorite-movie="'Kangaroo Jack'"
+          v-bind:favorite-shopping-item="'guitars'"
+        >
+        </pessimistic-mad-lib>
 
-      <br /><br />
-      <input v-model="nameInput" type="text" />
-      <input v-model="birthdayInput" type="date" />
-      <input v-model="favoriteFoodInput" type="text" />
-      <input v-model="favoriteNumberInput" type="number" />
-      <input v-model="favoriteMovieInput" type="text" />
-      <input v-model="favoriteThingInput" type="text" />
+        <br /><br /> -->
+        Name: <input v-model="nameInput" type="text" />
+        <br />
+        Birthday: <input v-model="birthdayInput" type="date" />
+        <br />
+        Food: <input v-model="favoriteFoodInput" type="text" />
+        <br />
+        Number: <input v-model="favoriteNumberInput" type="number" />
+        <br />
+        Movie: <input v-model="favoriteMovieInput" type="text" />
+        <br />
+        Thing: <input v-model="favoriteThingInput" type="text" />
+        <br />
+        <button @click="page = 'newmadlib'">Generate New Madlib</button>
+      </div>
 
       <br />
       <br />
       <!-- Insert your own mad-lib component here -->
-      <mad-lib
-        v-bind:name="nameInput"
-        v-bind:birthday="birthdayInput"
-        v-bind:favorite-food="favoriteFoodInput"
-        v-bind:favorite-number="favoriteNumberInput"
-        v-bind:favorite-movie="favoriteMovieInput"
-        v-bind:favorite-shopping-item="favoriteThingInput"
-      ></mad-lib>
+      <div v-if="page=='newmadlib'">
+        <mad-lib
+          v-bind:name="nameInput"
+          v-bind:birthday="birthdayInput"
+          v-bind:favorite-food="favoriteFoodInput"
+          v-bind:favorite-number="favoriteNumberInput"
+          v-bind:favorite-movie="favoriteMovieInput"
+          v-bind:favorite-shopping-item="favoriteThingInput"
+        ></mad-lib>
+      </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="app.js"></script>
